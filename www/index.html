@@ -183,6 +183,8 @@
     function btnAClick(e){
         active = true;
         startTime = new Date();
+
+       $("#btnA").prop("disabled",true);
         
     }
 
@@ -190,11 +192,13 @@
     function btnBClick(e){
         active=false;
         
+        $("#btnB").prop("disabled",true);
+        $("#btnA").prop("disabled",false);
     }
 
     // ButtonCがクリックされた時の処理
     function btnCClick(e){
-        //alarm();
+       // alarm();
         active = false;
          period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
         $("#time").html("経過時間： 0");
